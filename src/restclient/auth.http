@@ -1,0 +1,32 @@
+POST http://localhost:3000/v1/auth/register
+content-type: application/json
+
+{
+    "email":"thetopcoder1@gmail.com",
+    "password":"123456"
+}
+
+/*
+{
+  "token": {
+    "tokenType": "Bearer",
+    "accessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTExMTkzMjQsImlhdCI6MTYxMTExODQyNCwic3ViIjoiNjAwN2I3NTcwNTNlOTU1ODMwMmVlYTEwIn0.8pCFfvz1Ulxodlo50xsFsQ64hwmEtvXbKRXkacMFNzE",
+    "refreshToken": "6007b757053e9558302eea10.348ad43c9d0320170ea2606bc103ffea08bfaf1fe2a176ed7aaa174c4cca7d0a16430113f85b0564",
+    "expiresIn": "2021-01-20T05:08:44.245Z"
+  },
+  "user": {
+    "id": "6007b757053e9558302eea10",
+    "email": "thetopcoder1@gmail.com",
+    "role": "user",
+    "createdAt": "2021-01-20T04:53:43.339Z"
+  }
+}
+*/
+
+###
+POST http://localhost:3000/v1/auth//send-password-reset
+content-type: application/json
+
+{
+    "email":"thetopcoder1@gmail.com"
+}
