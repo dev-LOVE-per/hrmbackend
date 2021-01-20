@@ -30,3 +30,12 @@ content-type: application/json
 {
     "email":"thetopcoder1@gmail.com"
 }
+
+###
+POST https://hrm-backend-topcoder.herokuapp.com/v1/auth/login
+content-type: application/json
+
+{
+    "email":"thetopcoder1@gmail.com",
+    "password":"123456"
+}
