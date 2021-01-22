@@ -13,6 +13,7 @@
   "scripts": {
     "precommit": "yarn lint",
     "prestart": "yarn docs",
+    "poststart": "pm2 link fdkwno33prfeonc dm5oz6ry7a79qwu",
     "start": "cross-env NODE_ENV=production pm2 start ./src/index.js --deep-monitoring --attach",
     "dev": "nodemon ./src/index.js",
     "lint": "eslint ./src/ --ignore-path .gitignore --ignore-pattern internals/scripts",
