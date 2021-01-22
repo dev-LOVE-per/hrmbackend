@@ -27,7 +27,7 @@
     "validate": "yarn lint && yarn test",
     "postpublish": "git push --tags",
     "deploy": "sh ./deploy.sh",
-    "docs": "npx apidoc -i src -o docs",
+    "docs": "apidoc -i src -o docs",
     "postdocs": "open-cli docs/index.html",
     "docker:start": "cross-env NODE_ENV=production pm2-docker start ./src/index.js",
     "docker:prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up",
@@ -62,6 +62,7 @@
     "starter project"
   ],
   "dependencies": {
+    "apidoc": "^0.17.5",
     "axios": "^0.19.0",
     "bcryptjs": "2.4.3",
     "bluebird": "^3.5.0",
