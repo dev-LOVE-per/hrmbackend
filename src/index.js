@@ -1,18 +1,19 @@
-// create an express app
-const express = require('express');
+// make bluebird default Promise
+Promise = require('bluebird'); // eslint-disable-line no-global-assign
+const { env } = require('./config/vars');
+const logger = require('./config/logger');
+const app = require('./config/express');
+const mongoose = require('./config/mongoose');
 
-const app = express();
+// open mongoose connection
+mongoose.connect();
 
-// use the express-static middleware
-app.use(express.static('public'));
+// listen to requests
+const port = process.env.PORT || 3001;
+app.listen(port, () => logger.info(`server started on port ${port} (${env})`));
 
-// define the first route
-app.get('/', (req, res) => {
-  res.send('<h1>Hello World!</h1>');
-});
-
-// start the server listening for requests
-app.listen(
-  process.env.PORT || 3001,
-  () => console.log('Server is running...'),
-);
+/**
+* Exports express
+* @public
+*/
+module.exports = app;
