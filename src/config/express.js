@@ -50,8 +50,8 @@ app.use('/v1', routes);
 app.use(express.static(path.join(__dirname, '../../docs')));
 
 // serve docs
-app.use('/docs' , (req,res) => {
-    res.sendFile(path.join(__dirname , '../../docs/index.html'));
+app.use('/docs', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../docs/index.html'));
 });
 
 
