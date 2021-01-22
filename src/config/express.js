@@ -54,6 +54,24 @@ app.use('/docs', (req, res) => {
   res.sendFile(path.join(__dirname, '../../docs/index.html'));
 });
 
+// connect frontend resources
+app.use(express.static(path.join(__dirname, '../public')));
+
+// serve docs
+app.use('/one', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
+// http://localhost:3001/angular-ngrx-material-starter/assets/i18n/en.json
+// serve docs
+app.use('/angular-ngrx-material-starter/assets/i18n/:lang', (req, res) => {
+  res.sendFile(path.join(__dirname, `../public/assets/i18n/${req.params.lang}`));
+});
+
+// http://localhost:3001/angular-ngrx-material-starter/assets/i18n/examples/de.json
+app.use('/angular-ngrx-material-starter/assets/i18n/examples/:lang', (req, res) => {
+  res.sendFile(path.join(__dirname, `../public/assets/i18n/examples/${req.params.lang}`));
+});
 
 // if error is not an instanceOf APIError, convert it.
 app.use(error.converter);
